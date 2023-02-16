@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'compose_file.dart';
 import '../util/my_button.dart';
 import '../util/my_textfield.dart';
 import '../util/square_tile.dart';
-import '../layout/mobile_body.dart';
+import '../home_page.dart';
 import '../util/my_halfcircle.dart';
+
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -22,8 +24,10 @@ class LoginPage extends StatelessWidget {
     }
 
     return Scaffold(
+       resizeToAvoidBottomInset : false,
         backgroundColor: Colors.white,
-        body: Stack(
+        body:  
+          Stack(
           children: [
             // The containers in the background
 
@@ -40,7 +44,7 @@ class LoginPage extends StatelessWidget {
                   right: 20.0,
                   left: 20.0),
               child: new Container(
-                height: 150.0,
+                height: 1250.0,
                 width: MediaQuery.of(context).size.width,
                 child: new Container(
                   decoration: BoxDecoration(
@@ -122,7 +126,7 @@ class LoginPage extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) =>
-                                      const MobileScaffold()));
+                                      const MyHomePage()));
                         },
                         child: Text(
                           "Sign In",
@@ -137,6 +141,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ))
           ],
-        ));
+        )
+        );
   }
 }
